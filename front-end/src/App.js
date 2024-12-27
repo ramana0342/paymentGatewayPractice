@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { paymentData } from './paymentData';
 import { useState } from 'react';
-import { useRef } from 'react';
+
 
 function App() {
     const [inputshemeData,setInputShemeData] =  useState({shemeType:"",serviceType:"",subServicesType:"",paymentModeType:"",paymentOptionType:""})
@@ -108,7 +108,12 @@ console.log(inputValue)
 
   return (<>
   <div>
-   <div style={{textAlign:'center',margin:"20px"}}><input type="number" required onChange={(e)=>{setInputValue(e.target.value)}}/></div> 
+   <div style={{textAlign:'center',margin:"20px"}}>
+      <label>Enter Any Number</label>
+      <br></br>
+
+      <input type="number" required onChange={(e)=>{setInputValue(e.target.value)}}/>
+      </div> 
           <div style={{display:"flex",justifyContent:"space-between",margin:"0px 20px"}}>
              
              <div>
@@ -150,6 +155,8 @@ console.log(inputValue)
              </div>
              
              <div>
+               <label>Total Value : </label>
+              
                <input value={inputshemeData.paymentOptionType ? finalValueFun() :""}  type='number' required />
              </div>
 
